@@ -1,0 +1,78 @@
+.Hero-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  background: #212535;
+  height: 200px;
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.image-area {
+  padding: 20px 20px;
+}
+
+.hotel-image {
+  width: 260px;
+  height: 160px;
+}
+
+.hotel-details {
+  margin-left: 20px;
+}
+
+.hotel-name {
+  font-size: 40px;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 0px;
+}
+
+.hotel-location {
+  color: #dcdcdc;
+  margin-top: 4px;
+}
+
+.hotel-metadata {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 36px;
+}
+
+.hotel-metadata h6 {
+  font-size: 14px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.hotel-metadata .star-icon {
+  font-size: 12px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.hotel-metadata p {
+  font-size: 12px;
+  color: #dcdcdc;
+  margin-top: 4px;
+}
+
+.offer-section {
+  margin: 40px 20px;
+  padding: 0 20px;
+  border: 1px solid #ffffff80;
+}
+
+.offer-section h4 {
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 4px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.offer-section p {
+  color: #dcdcdc;
+  font-size: 14px;
+  line-height: 20px;
+}
