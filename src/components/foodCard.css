@@ -1,0 +1,51 @@
+.food-card {
+  width: 260px;
+  padding: 10px 10px;
+}
+
+.food-image {
+  width: inherit;
+  height: 160px;
+}
+
+.food-name {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 0;
+  color: #212535;
+}
+
+.food-category {
+  font-size: 14px;
+  color: #666666;
+  margin: 4px 0;
+}
+
+.price-cta-section {
+  margin-top: 12px;
+}
+
+.food-price {
+  position: absolute;
+  display: inline-block;
+  align-items: center;
+  font-size: 15px;
+  color: #212535;
+  margin-top: 4px;
+}
+
+.card-cta {
+  display: inline-block;
+  align-items: center;
+  float: right;
+  border: 1px solid #66666640;
+  font-size: 14px;
+  color: #0099ff;
+  font-weight: 500;
+  padding: 6px 30px;
+  cursor: pointer;
+}
+
+.card-cta:hover {
+  box-shadow: 2px 2px #dcdcdc;
+}
