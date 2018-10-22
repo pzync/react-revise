@@ -1,0 +1,27 @@
+.category-list {
+  list-style: none;
+  text-align: right;
+  margin-right: 40px;
+  margin-top: 88px;
+}
+
+.list-item {
+  font-size: 15px;
+  color: #212535;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.list-item:hover {
+  color: #0099ff;
+}
+
+.list-item-active {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0099ff;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}

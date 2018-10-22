@@ -2,35 +2,61 @@ import React, { Component } from "react";
 import "./App.css";
 import HeroSection from "./components/heroSection";
 import MenuSection from "./components/menuSection";
+import CategoryList from "./components/categoryList";
 
 const API_KEY = `38348c8d8e6066fe42fcd7fb4a2375bc`;
 
 class App extends Component {
   state = {
     menuItems: [],
-    hasLoaded: false
+    hasLoaded: false,
+    categories: [],
+    activeCategory: "All Menu Items"
   };
 
   async componentDidMount() {
     const api_call = await fetch(
-      `https://cors-anywhere.herokuapp.com/https://www.food2fork.com/api/search?key=${API_KEY}&q=sandwich&count=18`
+      `https://cors-anywhere.herokuapp.com/https://www.food2fork.com/api/search?key=${API_KEY}&q=sandwich&count=27`
     );
 
     const data = await api_call.json();
     const menuItems = data.recipes;
-    console.log(menuItems);
-    this.setState({ menuItems, hasLoaded: true });
+
+    // This creates a new array 'categories' containing only the unique values
+    // Read more here: https://stackoverflow.com/questions/15125920/how-to-get-distinct-values-from-an-array-of-objects-in-javascript
+    const categories = [
+      "All Menu Items",
+      ...new Set(menuItems.map(m => m.publisher))
+    ];
+
+    this.setState({ menuItems, hasLoaded: true, categories });
   }
 
+  handleSelect = item => {
+    const activeCategory = item;
+    this.setState({ activeCategory });
+  };
+
   render() {
-    const { menuItems } = this.state;
+    const { menuItems, categories, activeCategory, hasLoaded } = this.state;
+
+    const filteredMenuItems =
+      activeCategory === "All Menu Items"
+        ? menuItems
+        : menuItems.filter(m => m.publisher === activeCategory);
 
     return (
       <div className="App">
         <HeroSection />
         <div className="content-section">
-          <div className="category-list-sidebar" />
-          <MenuSection menu={menuItems} />
+          <CategoryList
+            list={categories}
+            activeItem={activeCategory}
+            onSelect={this.handleSelect}
+          />
+
+          <MenuSection menu={filteredMenuItems} />
+
           <div className="cart-section" />
         </div>
       </div>

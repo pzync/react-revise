@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./foodCard.css";
 
 const FoodCard = ({ cardImage, cardTitle, cardCategory }) => {
