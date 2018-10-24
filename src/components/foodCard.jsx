@@ -1,7 +1,7 @@
 import React from "react";
 import "./foodCard.css";
 
-const FoodCard = ({ cardImage, cardTitle, cardCategory }) => {
+const FoodCard = ({ cardImage, cardTitle, cardCategory, inCart, onAdd }) => {
   return (
     <div className="food-card">
       <img src={cardImage} className="food-image" alt="" />
@@ -11,7 +11,13 @@ const FoodCard = ({ cardImage, cardTitle, cardCategory }) => {
       <p className="food-category">{cardCategory}</p>
       <div className="price-cta-section">
         <div className="food-price">$10.50</div>
-        <div className="card-cta">ADD</div>
+        {inCart ? (
+          <div className="card-in-cart">ADDED</div>
+        ) : (
+          <div className="card-cta" onClick={onAdd}>
+            ADD
+          </div>
+        )}
       </div>
     </div>
   );

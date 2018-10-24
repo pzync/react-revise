@@ -46,6 +46,18 @@
   cursor: pointer;
 }
 
+.card-in-cart {
+  display: inline-block;
+  align-items: center;
+  float: right;
+  /* border: 1px solid #66666640; */
+  font-size: 14px;
+  color: #00a700;
+  font-weight: 500;
+  padding: 6px 10px 6px 30px;
+  /* cursor: pointer; */
+}
+
 .card-cta:hover {
   box-shadow: 2px 2px #dcdcdc;
 }

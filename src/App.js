@@ -21,9 +21,12 @@ class App extends Component {
     );
 
     const data = await api_call.json();
-    const menuItems = data.recipes;
+    const recipes = data.recipes; // get only the recipes array from fetched data
 
-    // This creates a new array 'categories' containing only the unique values
+    // The following adds a inCart key (set to FALSE) to each recipe object
+    const menuItems = recipes.map(r => ({ ...r, inCart: false }));
+
+    // The following creates a new array 'categories' containing only the unique values
     // Read more here: https://stackoverflow.com/questions/15125920/how-to-get-distinct-values-from-an-array-of-objects-in-javascript
     const categories = [
       "All Menu Items",
@@ -36,6 +39,14 @@ class App extends Component {
   handleSelect = item => {
     const activeCategory = item;
     this.setState({ activeCategory });
+  };
+
+  handleAdd = foodItem => {
+    const menuItems = [...this.state.menuItems];
+    const index = menuItems.indexOf(foodItem);
+    menuItems[index] = { ...foodItem };
+    menuItems[index].inCart = true;
+    this.setState({ menuItems });
   };
 
   render() {
@@ -56,9 +67,9 @@ class App extends Component {
             onSelect={this.handleSelect}
           />
 
-          <MenuSection menu={filteredMenuItems} />
+          <MenuSection menu={filteredMenuItems} onAdd={this.handleAdd} />
 
-          <CartSection />
+          <CartSection menu={menuItems} />
         </div>
       </div>
     );
