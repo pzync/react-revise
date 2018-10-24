@@ -3,7 +3,7 @@ import "./cartSection.css";
 import EmptyCart from "./emptyCart";
 import CartItem from "./cartItem";
 
-const CartSection = ({ menu }) => {
+const CartSection = ({ menu, onRemove }) => {
   const menuInCart = menu.filter(m => m.inCart);
 
   return (
@@ -12,7 +12,11 @@ const CartSection = ({ menu }) => {
         <div className="filled-cart">
           <h2 className="cart-title">Cart</h2>
           {menuInCart.map(menu => (
-            <CartItem cartItem={menu} key={menu.recipe_id} />
+            <CartItem
+              cartItem={menu}
+              onRemove={() => onRemove(menu)}
+              key={menu.recipe_id}
+            />
           ))}
           <hr />
           <div className="cart-total-section">

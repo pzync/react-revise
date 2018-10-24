@@ -49,6 +49,14 @@ class App extends Component {
     this.setState({ menuItems });
   };
 
+  handleRemove = cartItem => {
+    const menuItems = [...this.state.menuItems];
+    const index = menuItems.indexOf(cartItem);
+    menuItems[index] = { ...cartItem };
+    menuItems[index].inCart = false;
+    this.setState({ menuItems });
+  };
+
   render() {
     const { menuItems, categories, activeCategory, hasLoaded } = this.state;
 
@@ -69,7 +77,7 @@ class App extends Component {
 
           <MenuSection menu={filteredMenuItems} onAdd={this.handleAdd} />
 
-          <CartSection menu={menuItems} />
+          <CartSection menu={menuItems} onRemove={this.handleRemove} />
         </div>
       </div>
     );
