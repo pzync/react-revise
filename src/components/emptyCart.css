@@ -1,0 +1,16 @@
+.empty-cart-title {
+  font-size: 28px;
+  margin-top: 32px;
+  color: #21253520;
+}
+
+.empty-cart-image {
+  margin: 20px 40px;
+  width: 200px;
+  opacity: 0.3;
+}
+
+.empty-cart-message {
+  font-size: 15px;
+  color: #21253540;
+}

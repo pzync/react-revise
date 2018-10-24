@@ -1,0 +1,41 @@
+.cart-title {
+  font-size: 28px;
+  margin-top: 32px;
+  color: #212535;
+}
+
+.filled-cart hr {
+  margin-right: 20px;
+  border: 1px dashed #21253560;
+}
+
+.cart-total-section {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.cart-total-label {
+  font-size: 15px;
+  font-weight: 800;
+  color: #212535;
+}
+
+.cart-toal-price {
+  justify-self: right;
+  margin-right: 30px;
+  font-size: 15px;
+  color: #212535;
+  font-weight: 800;
+}
+
+.checkout-button {
+  font-size: 16px;
+  color: #ffffff;
+  background: #0099ff;
+  font-weight: 600;
+  cursor: pointer;
+  width: 94%;
+  height: 50px;
+  border: none;
+  margin-top: 20px;
+}

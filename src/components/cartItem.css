@@ -1,0 +1,31 @@
+.cart-item {
+  display: grid;
+  grid-template-columns: 160px auto auto;
+}
+
+.cart-food-name {
+  font-size: 13px;
+  font-weight: 500;
+  width: 180px;
+  color: #212535;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.cart-food-price {
+  font-size: 13px;
+  font-weight: 300;
+  color: #212535;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.cart-remove-button {
+  font-size: 13px;
+  font-weight: 300;
+  color: #e72f2f;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  justify-self: center;
+}

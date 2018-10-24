@@ -3,6 +3,7 @@ import "./App.css";
 import HeroSection from "./components/heroSection";
 import MenuSection from "./components/menuSection";
 import CategoryList from "./components/categoryList";
+import CartSection from "./components/cartSection";
 
 const API_KEY = `38348c8d8e6066fe42fcd7fb4a2375bc`;
 
@@ -16,7 +17,7 @@ class App extends Component {
 
   async componentDidMount() {
     const api_call = await fetch(
-      `https://cors-anywhere.herokuapp.com/https://www.food2fork.com/api/search?key=${API_KEY}&q=sandwich&count=27`
+      `https://secret-ocean-49799.herokuapp.com/https://www.food2fork.com/api/search?key=${API_KEY}&q=sandwich&count=27`
     );
 
     const data = await api_call.json();
@@ -57,7 +58,7 @@ class App extends Component {
 
           <MenuSection menu={filteredMenuItems} />
 
-          <div className="cart-section" />
+          <CartSection />
         </div>
       </div>
     );
