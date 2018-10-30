@@ -5,6 +5,30 @@
   color: #212535;
 }
 
+.menu-top-area {
+  display: grid;
+  grid-template-columns: 327px auto;
+}
+
+input[type="text"] {
+  margin-top: 18px;
+  width: 100%;
+  height: 40px;
+  border: none;
+  align-self: center;
+  font-size: 15px;
+  color: #212535;
+}
+
+input[type="text"]::placeholder {
+  color: #21253540;
+}
+
+input[type="text"]:focus {
+  border: none;
+  outline: none;
+}
+
 .cards-section {
   display: grid;
   grid-template-columns: 1fr 1fr;

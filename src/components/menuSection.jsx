@@ -2,10 +2,18 @@ import React from "react";
 import FoodCard from "./foodCard";
 import "./menuSection.css";
 
-const MenuSection = ({ menu, onAdd }) => {
+const MenuSection = ({ menu, onAdd, onChange, searchQuery }) => {
   return (
     <div>
-      <h2 className="menu-heading">Menu Items</h2>
+      <div className="menu-top-area">
+        <h2 className="menu-heading">Menu Items</h2>
+        <input
+          type="text"
+          placeholder="Search.."
+          value={searchQuery}
+          onChange={onChange}
+        />
+      </div>
       <div className="cards-section">
         {menu.map(item => (
           <FoodCard
