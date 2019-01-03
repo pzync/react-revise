@@ -1,0 +1,22 @@
+.search-box {
+  z-index: 10;
+}
+
+input[type="text"] {
+  margin-left: 10px;
+  width: 90%;
+  height: 40px;
+  border: none;
+  align-self: center;
+  font-size: 24px;
+  color: #212535;
+}
+
+input[type="text"]::placeholder {
+  color: #21253540;
+}
+
+input[type="text"]:focus {
+  border: none;
+  outline: none;
+}

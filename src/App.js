@@ -12,7 +12,9 @@ class App extends Component {
     menuItems: [],
     hasLoaded: false,
     categories: [],
-    activeCategory: "All Menu Items"
+    activeCategory: "All Menu Items",
+    searchQuery: "",
+    searchOn: false
   };
 
   async componentDidMount() {
@@ -57,13 +59,28 @@ class App extends Component {
     this.setState({ menuItems });
   };
 
+  handleInput = e => {
+    this.setState({ searchQuery: e.target.value });
+  };
+
   render() {
-    const { menuItems, categories, activeCategory, hasLoaded } = this.state;
+    const {
+      menuItems,
+      categories,
+      activeCategory,
+      hasLoaded,
+      searchOn,
+      searchQuery
+    } = this.state;
+
+    const searchedItems = menuItems.filter(
+      m => m.title.toLowerCase().indexOf(searchQuery.toLowerCase()) !== -1
+    );
 
     const filteredMenuItems =
       activeCategory === "All Menu Items"
-        ? menuItems
-        : menuItems.filter(m => m.publisher === activeCategory);
+        ? searchedItems
+        : searchedItems.filter(m => m.publisher === activeCategory);
 
     return (
       <div className="App">
@@ -75,7 +92,13 @@ class App extends Component {
             onSelect={this.handleSelect}
           />
 
-          <MenuSection menu={filteredMenuItems} onAdd={this.handleAdd} />
+          <MenuSection
+            menu={filteredMenuItems}
+            onAdd={this.handleAdd}
+            searchQuery={searchQuery}
+            searchOn={searchOn}
+            onInput={this.handleInput}
+          />
 
           <CartSection menu={menuItems} onRemove={this.handleRemove} />
         </div>
